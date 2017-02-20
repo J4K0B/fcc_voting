@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+  <html ng-app = "myApp">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+     <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     
+      
+      
+      
+
+    </head>
+
+    <body>
+
+    
+        
+        <nav>
+             <div class="nav-wrapper">
+             <a href="#" class="brand-logo">Voting App</a>
+             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="login.html">Sign up</a></li>
+             </ul>
+             </div>
+        </nav>
+        
+    <div class="container center-align" ng-controller="AppCtrl">
+        <h1> Polls</h1>
+        <div id="links" ng-repeat="poll in polls">
+            
+        <a href={{poll.link}}>{{poll.name}}</a>
+        </div>
+    </div>
+
+      <!--Import jQuery before materialize.js-->
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+<script src="controllers/controller.js"> </script>
+    </body>
+  </html>
