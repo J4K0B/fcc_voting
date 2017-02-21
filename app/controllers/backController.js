@@ -5,11 +5,12 @@ var polls = require("../models/polls.js");
 function PollsHandler (){
     this.getPolls = function(req, res) {
         console.log("lel");
-        polls.findOne({name: "best program"})
-        .exec(function (err, result){
-            if(err) {throw err;}
-            res.json(result);
+        var ende = [];
+        var arr = polls.find().exec(function(err, results){
+            if (err) {throw err;}
+            res.send(results);
         });
+        
         
         //res.send("lel");
         

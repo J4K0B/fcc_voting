@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var mongo = require("mongodb").MongoClient;
 var Schema = mongoose.Schema;
 
 var pollsSchema = new Schema({

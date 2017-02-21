@@ -26,6 +26,7 @@
              <a href="#" class="brand-logo">Voting App</a>
              <ul id="nav-mobile" class="right hide-on-med-and-down">
                   <li><a href="#">Home</a></li>
+                  <li><a href="/new"> New</a></li>
                   <li><a href="login.html">Sign up</a></li>
              </ul>
              </div>
@@ -33,11 +34,17 @@
         
     <div class="container center-align" ng-controller="AppCtrl">
         <h1> Polls</h1>
-        <div id="links" ng-repeat="poll in polls">
-            
-        <a href={{poll.link}}>{{poll.name}}</a>
+        <div class="card blue-grey darken-1" id="links" ng-repeat="poll in polls">
+            <div class="card-content white-text">
+              <span class="card-title">{{poll.name}}</span>
+            </div>
+            <div class="card-action">
+              <a href={{poll.link}}>Vote</a>
+            </div>
         </div>
     </div>
+    
+    
 
       <!--Import jQuery before materialize.js-->
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
