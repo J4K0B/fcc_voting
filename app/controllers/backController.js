@@ -2,6 +2,7 @@
 
 var polls = require("../models/polls.js");
 
+
 function PollsHandler (){
     this.getPolls = function(req, res) {
         console.log("lel");
