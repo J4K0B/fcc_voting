@@ -19,8 +19,5 @@ module.exports = function (app) {
 		.get(function (req,res){
 	    res.render("new");
 		})
-		.post(function(req,res){
-			console.log(req.body);
-			res.send("bla")
-		});
+		.post(backController.postPolls);
 };
