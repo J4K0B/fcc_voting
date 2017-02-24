@@ -22,9 +22,14 @@ function PollsHandler (){
             else console.log('Saved : ', data );
             res.send(data._id);
             });
-            
         };
-        
+    this.findPolls = function(req,res){
+        res.send(req.params.id);
+        polls.findById(req.params.id, 'name content', function (err, poll) {
+  if (err) throw(err);
+  console.log(poll.name, poll.content);
+});
+    };
     
     
     

@@ -20,4 +20,10 @@ module.exports = function (app) {
 	    res.render("new");
 		})
 		.post(backController.postPolls);
+	app.route("/poll/:id")
+		.get(backController.findPolls);
+	app.route("/lel")
+		.get(function(req,res){
+			res.render("polls");
+		});
 };
