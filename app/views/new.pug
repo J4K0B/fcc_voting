@@ -11,15 +11,13 @@ html(ng-app="myApp")
                         .input-field.col.s12
                             input#poll_name(type="text" placeholder="Best Website" name="name")
                             label(for="poll_name") Name your Poll
-                    #options.row
-                        .input-field.col.s4
-                            input#options(type="text" placeholder="Voting App" name="options")
-                            label(for="options") Create Options
-                        .input-field.col.s4
-                            input#options(type="text" placeholder="Voting App" name="options")
-                            label(for="options") Create Options
-                        a.btn-floating.btn-large.waves-effect.waves-light.red
-                                i.material-icons add
+                    #options
+                        .row
+                            .input-field.col.s4
+                                input#options(type="text" placeholder="Voting App" name="options")
+                                label(for="options") Create Options
+                            a#add.btn-floating.btn-large.waves-effect.waves-light.red
+                                    i.material-icons add
                     .row
                         button.btn.waves-effect.waves-light.col.s2(type="submit" name="action") Submit
                             i.material-icons.right send
