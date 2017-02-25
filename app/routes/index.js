@@ -11,6 +11,9 @@ module.exports = function (app) {
     app.route("/controllers/controller.js").get(function(req,res){
         res.sendFile(path+"/app/controllers/controller.js");
     });
+    app.route("/controllers/showPoll.js").get(function(req,res){
+        res.sendFile(path+"/app/controllers/showPoll.js");
+    });
 	app.route("/").get(function(req,res){
 	    //res.sendFile(path+"/app/public/index.html");
 	    res.render("index");
@@ -20,9 +23,9 @@ module.exports = function (app) {
 	    res.render("new");
 		})
 		.post(backController.postPolls);
-	app.route("/poll/:id")
+	app.route("/getPollData/:id")
 		.get(backController.findPolls);
-	app.route("/lel")
+	app.route("/poll/:id")
 		.get(function(req,res){
 			res.render("polls");
 		});

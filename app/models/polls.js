@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var pollsSchema = new Schema({
     name: String,
     content: Array,
+    options: Array,
     link: String
 });
 

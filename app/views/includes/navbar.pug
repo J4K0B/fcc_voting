@@ -1,9 +1,18 @@
 nav
     .nav-wrapper
-        a.brand-logo.center(href="#") Voting App
-        ul#nav-mobile.right.hide-on-med-and-down
+        a.brand-logo.center(href="/") Voting App
+        a.button-collapse(href="#" data-activities="mobile-demo")
+          i.material-icons menu
+        ul.right.hide-on-med-and-down
               li
-                a(href="#") Home
+                a(href="/") Home
+              li
+                a(href="/new") New
+              li
+                a(href="/login") Sign up
+        ul#mobile-demo.side-nav
+              li
+                a(href="/") Home
               li
                 a(href="/new") New
               li
