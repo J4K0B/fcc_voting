@@ -9,8 +9,13 @@ html(ng-app="myApp")
         include ./includes/navbar.pug
         .container.center-align
             h1 Poll
-            .row
-                #chart_div.col.s4
-                #options.col.s8
+            #chart_div
+            .input-field
+                .row
+                    label Voting Options: 
+                        select#options.browser-default
+                            option(diabled selected) Choose your Vote
+                        button#bVote.btn.waves-effect.waves-light(type="submit" name="action") Vote
+                        
         
         

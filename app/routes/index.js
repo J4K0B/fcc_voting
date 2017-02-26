@@ -28,5 +28,6 @@ module.exports = function (app) {
 	app.route("/poll/:id")
 		.get(function(req,res){
 			res.render("polls");
-		});
+		})
+		.post(backController.vote);
 };

@@ -21,9 +21,20 @@ $(document).ready(function(){
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-      options.forEach(function(data){
-        $("#options").append('<button class="btn waves-effect waves-light col s2" type="submit" name="action">'+data+"</button>"  )
+     // options.forEach(function(data){
+       // $("#options").append('<option>'+data+"</option>");
+    //});
+    for(var i = 0; i<options.length;i++){
+        $("#options").append('<option value="'+i+'">'+ options[i]+"</option>");
+    }
     });
+    
+    $("#bVote").on("click",function(){
+        var index = $("#options").val();
+        $.post(window.location.href,{"index": index},function(){
+            console.log("lel");
+        });
+        window.location.reload(true);
     });
     
     
@@ -37,6 +48,8 @@ $(document).ready(function(){
 
         // Set chart options
         var options = {'title':name,
+                        "legend": "left",
+                        "pieHole": 0.4,
                        'width':400,
                        'height':300};
 

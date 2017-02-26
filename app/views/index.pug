@@ -1,6 +1,7 @@
 doctype
 html(ng-app="myApp")
     include ./includes/head.pug
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js", type ="text/javascript")
     body
         include ./includes/navbar.pug
         .container.center-align(ng-controller="AppCtrl")
@@ -9,5 +10,6 @@ html(ng-app="myApp")
                 .card-content.white-text
                     span.card-title {{poll.name}}
                 .card-action
-                    <a href={{poll.link}}>Vote</a>
+                    <a ng-href="/poll/{{poll._id}}">Vote</a>
+                    
         include ./includes/scripts.pug

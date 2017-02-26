@@ -1,6 +1,7 @@
 doctype
 html(ng-app="myApp")
     include ./includes/head.pug
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js", type ="text/javascript")
     body
         include ./includes/navbar.pug
         .container.center-align
@@ -23,7 +24,7 @@ html(ng-app="myApp")
                                 input#options(type="text" placeholder="Voting App" name="options")
                                 label(for="options") Create Options
                     .row
-                        button.btn.waves-effect.waves-light.col.s2(type="submit" name="action") Submit
+                        button.btn.waves-effect.waves-light(type="submit" name="action") Submit
                             i.material-icons.right send
                 
         include ./includes/scripts.pug

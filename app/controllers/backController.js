@@ -42,10 +42,32 @@ function PollsHandler (){
             
         });
     };
-    
-    
-    
-    
+    this.vote = function(req,res) {
+        
+        if (!isNaN(req.body.index)){
+            var neu;
+            polls.findById(req.params.id, "content",function(err, poll){
+                if (err) throw (err);
+                var index = req.body.index;
+                console.log("index: " + index);
+                neu = poll.content;
+                neu[index][1]= neu[index][1] + 1;
+                poll.content = neu;
+                
+                console.log("poll value: "+ neu[index][1]);
+                
+                polls.update({ _id: req.params.id }, { $set: { "content": neu }}, function(){
+                  console.log("geschafft"); 
+                });
+            });
+        }
+        
+    };
 }
+    
+    
+    
+    
+
 
 module.exports = PollsHandler;
