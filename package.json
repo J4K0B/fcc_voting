@@ -1,37 +1,37 @@
 {
-  "name": "clementinejs-fcc",
-  "version": "1.0.1",
-  "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "[![Join the chat at https://gitter.im/johnstonbl01/clementinejs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/johnstonbl01/clementinejs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)",
   "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnstonbl01/clementinejs-fcc"
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.16.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^1.2.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "mongodb": "^2.2.24",
+    "mongoose": "^4.8.3",
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "pug": "^2.0.0-beta11"
   },
-  "homepage": "http://www.clementinejs.com/",
-  "bugs": "https://github.com/johnstonbl01/clementinejs-fcc/issues",
-  "keywords": [
-    "MongoDB",
-    "Mongoose",
-    "full stack",
-    "Express",
-    "Node",
-    "javascript",
-    "boilerplate"
-  ],
+  "devDependencies": {},
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Blake Johnston",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.16.1",
-    "dotenv": "^1.2.0",
-    "express": "^4.12.4",
-    "express-session": "^1.11.3",
-    "mongodb": "^2.2.24",
-    "mongoose": "^4.1.0",
-    "passport": "^0.3.0",
-    "passport-github": "^1.0.0",
-    "pug": "^2.0.0-beta11"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J4K0B/fcc_voting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J4K0B/fcc_voting/issues"
+  },
+  "homepage": "https://github.com/J4K0B/fcc_voting#readme"
 }
