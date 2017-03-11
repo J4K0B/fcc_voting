@@ -38,6 +38,7 @@ module.exports = function (app, passport) {
 	    console.log(req.user._id);
 		})
 		.post(isLoggedIn, backController.postPolls);
+	app.route("/add/:id").post(backController.addOptions);
 	app.route("/getPollData/:id")
 		.get(backController.findPolls);
 	app.route("/poll/:id")

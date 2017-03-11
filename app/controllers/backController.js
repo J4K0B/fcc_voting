@@ -50,6 +50,22 @@ function PollsHandler (){
             
         });
     };
+    this.addOptions = function(req,res){
+        var id = req.params.id;
+        var name = req.body.name;
+        polls.findById(req.params.id, function(err,poll){
+           if(err) throw err;
+           var content = poll.content;
+           var options = poll.options;
+           console.log(content, options);
+           options.push(name);
+           content.push([name, 1]);
+           
+           polls.update({_id: id}, {$set: {"content": content, "options":options}},function(){
+               console.log("neue option");
+           });
+        });
+    };
     this.vote = function(req,res) {
         
         if (!isNaN(req.body.index)){

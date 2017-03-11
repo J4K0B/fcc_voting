@@ -10,12 +10,13 @@ html(ng-app="myApp")
         .container.center-align
             h1 Poll
             #chart_div
-            .input-field
-                .row
+            .row
+                .input-field.col.s6
                     label Voting Options: 
                         select#options.browser-default
                             option(diabled selected) Choose your Vote
                         button#bVote.btn.waves-effect.waves-light(type="submit" name="action") Vote
-                        
-        
-        
+                .input-field.col.s6 
+                    label New Option:
+                        input#neuName.validate(placeholder="Your Option" type="text")
+                        button#bNew.btn.waves-effect.waves-light(type="submit" name="new") Create Option

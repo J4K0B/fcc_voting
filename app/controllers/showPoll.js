@@ -28,6 +28,20 @@ $(document).ready(function(){
         $("#options").append('<option value="'+i+'">'+ options[i]+"</option>");
     }
     });
+    $("#bNew").on("click",function(){
+        $.getJSON("/isLoggedIn",function(data){
+			if(data.login){
+				var neuName = $("#neuName").val();
+                $.post("/add/"+id,{"name": neuName});
+                window.location.reload();
+			}
+			else {
+			    window.location.replace("/login");
+			}
+		});
+        
+    });
+    
     
     $("#bVote").on("click",function(){
         var index = $("#options").val();
