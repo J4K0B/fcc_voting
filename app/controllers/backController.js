@@ -10,6 +10,13 @@ function PollsHandler (){
             res.send(results);
         });
     };    
+    this.getUserPolls = function(req, res) {
+        console.log(req.user._id);
+        polls.find({"creator": req.user._id}).exec(function(err, results){
+            if (err) {throw err;}
+            res.send(results);
+        });
+    };
     this.postPolls = function(req,res){
         var contents = [];
         req.body.options.forEach(function(data){
@@ -19,7 +26,8 @@ function PollsHandler (){
         var poll = new polls({
             name : req.body.name,
             content: contents,
-            options: req.body.options
+            options: req.body.options,
+            creator: req.user._id
             });
              
             poll.save(function (err, data) {
