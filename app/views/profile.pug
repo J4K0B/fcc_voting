@@ -10,7 +10,8 @@ html(ng-app="newApp")
                 .card-content.white-text
                     span.card-title {{poll.name}}
                 .card-action
-                    <a ng-href="/poll/{{poll._id}}">Vote</a>
+                    <a ng-href="/poll/{{poll._id}}">View</a>
+                    <a ng-href="/delete/{{poll._id}}">Delete</a>
             a(href="/new").btn-floating.btn-large.waves-effect.waves-light.red
                                     i.material-icons add        
         include ./includes/scripts.pug

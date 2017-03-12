@@ -62,6 +62,7 @@ module.exports = function (app, passport) {
 				res.render("signup");
 			}
 		});
+	app.get("/delete/:id",isLoggedIn, backController.deletePolls);
 	app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');

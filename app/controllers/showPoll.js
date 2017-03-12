@@ -4,6 +4,13 @@ $(document).ready(function(){
     var name;
     var content;
     var options;
+    $.getJSON("/isLoggedIn",function(data){
+		console.log(data);
+		if(data.login){
+	    	$("#signup").html("<a href='/profile'> Profile </a>");
+			$("#login").html("<a href='/logout'> Logout </a>");
+		}
+	});
     $.getJSON("/getPollData/"+id,function(data){
         name = data.name;
         content = data.content;
@@ -40,6 +47,9 @@ $(document).ready(function(){
 			}
 		});
         
+    });
+    $("#btweet").on("click", function(){
+        window.open("https://twitter.com/intent/tweet?hashtags=polls&text=Check out this Poll "+encodeURIComponent(window.location));
     });
     
     

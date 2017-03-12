@@ -4,19 +4,21 @@ html(ng-app="myApp")
     script(src="https://www.gstatic.com/charts/loader.js")
     include ./includes/scripts.pug
     script(src="../../controllers/showPoll.js")
-    
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
     body
         include ./includes/navbar.pug
         .container.center-align
             h1 Poll
             #chart_div
+            a#btweet.waves-effect.waves-light.btn
+                i.fa.fa-twitter.fa-2x(aria-hidden="true")
             .row
-                .input-field.col.s6
+                .input-field.col.s3
                     label Voting Options: 
                         select#options.browser-default
                             option(diabled selected) Choose your Vote
                         button#bVote.btn.waves-effect.waves-light(type="submit" name="action") Vote
-                .input-field.col.s6 
+                .input-field.col.s3 
                     label New Option:
                         input#neuName.validate(placeholder="Your Option" type="text")
                         button#bNew.btn.waves-effect.waves-light(type="submit" name="new") Create Option

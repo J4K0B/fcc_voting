@@ -66,6 +66,13 @@ function PollsHandler (){
            });
         });
     };
+    this.deletePolls = function (req,res){
+      var id = req.params.id;
+      var user = req.user._id;
+      polls.remove({"_id": id, "creator": user}, function(){
+          res.redirect("/profile");
+      });
+    };
     this.vote = function(req,res) {
         
         if (!isNaN(req.body.index)){
